@@ -122,10 +122,21 @@ namespace Lithnet.Laps.Web.Controllers
 
                 if (!String.IsNullOrEmpty(target.ExpireAfter))
                 {
-                    UpdateTargetPasswordExpiry(target, computer);
-
-                    // Get the password again with the updated expiracy date.
-                    password = directory.GetPassword(computer);
+                    try
+                    {
+                        UpdateTargetPasswordExpiry(target, computer);
+                        // Get the password again with the updated expiracy date.
+                        password = directory.GetPassword(computer);
+                    }
+                    catch (UnauthorizedAccessException ex)
+                    {
+                        return this.LogAndReturnErrorResponse(
+                            model,
+                            UIMessages.NotAuthorizedToUpdateExpiracy,
+                            EventIDs.NotAuthorizedToUpdateExpiracy,
+                            string.Format(LogMessages.NotAuthorizedToUpdateExpiracy, computer.SamAccountName, user.SamAccountName)
+                        );
+                    }
                 }
 
                 reporting.PerformAuditSuccessActions(model, target, authResponse, user, computer, password);

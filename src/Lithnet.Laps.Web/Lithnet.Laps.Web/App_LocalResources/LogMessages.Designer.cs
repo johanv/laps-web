@@ -198,6 +198,15 @@ namespace Lithnet.Laps.Web.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not update the password expiracy date for computer {1}, as requested by user {0}..
+        /// </summary>
+        internal static string NotAuthorizedToUpdateExpiracy {
+            get {
+                return ResourceManager.GetString("NotAuthorizedToUpdateExpiracy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The user {0} on IP {1} has exceeded the maximum allowed number of requests per IP ({2} per {3} seconds).
         /// </summary>
         internal static string RateLimitExceededIP {

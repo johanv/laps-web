@@ -168,4 +168,7 @@
   <data name="LoggedOut" xml:space="preserve">
     <value>You have been logged out. Please close all browser windows.</value>
   </data>
+  <data name="NotAuthorizedToUpdateExpiracy" xml:space="preserve">
+    <value>You are not authorized to update the password expiracy date.</value>
+  </data>
 </root>

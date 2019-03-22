@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
@@ -89,7 +88,7 @@ namespace Lithnet.Laps.Web
                 return null;
             }
 
-            return result.Properties[Directory.AttrMsMcsAdmPwd][0]?.ToString();
+            return result.Properties[ActiveDirectory.ActiveDirectory.AttrMsMcsAdmPwd][0]?.ToString();
         }
     }
 }

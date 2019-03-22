@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 
 namespace Lithnet.Laps.Web
 {
-    public class ReaderElement : ConfigurationElement
+    public class ReaderElement : ConfigurationElement, IReaderElement
     {
         private const string PropAudit = "audit";
         private const string PropPrincipal = "principal";

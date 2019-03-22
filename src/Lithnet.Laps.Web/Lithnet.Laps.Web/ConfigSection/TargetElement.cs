@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.DirectoryServices;
-using System.Linq;
-using System.Security.Principal;
-using System.Web;
+﻿using System.Configuration;
 using System.DirectoryServices.AccountManagement;
+using Lithnet.Laps.Web.Audit;
+using Lithnet.Laps.Web.Models;
 
 namespace Lithnet.Laps.Web
 {
-    public class TargetElement : ConfigurationElement
+    public class TargetElement : ConfigurationElement, ITarget
     {
         private Principal principal;
 
@@ -49,5 +45,13 @@ namespace Lithnet.Laps.Web
                 return this.principal;
             }
         }
+
+        TargetType ITarget.TargetType => Type;
+
+        string ITarget.TargetName => Name;
+
+        string ITarget.ExpireAfter => ExpireAfter;
+
+        UsersToNotify ITarget.UsersToNotify => Audit.UsersToNotify;
     }
 }

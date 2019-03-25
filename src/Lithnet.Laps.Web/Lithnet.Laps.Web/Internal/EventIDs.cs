@@ -22,6 +22,7 @@
         public const int RateLimitExceededIP = 502;
         public const int RateLimitExceededUser = 503;
         public const int AuthorizationFailed = 504;
+        public const int NotAuthorizedToUpdateExpiracy = 505;
         
         public const int UnexpectedError = 600;
         public const int AuditErrorCannotSendSuccessEmail = 601;

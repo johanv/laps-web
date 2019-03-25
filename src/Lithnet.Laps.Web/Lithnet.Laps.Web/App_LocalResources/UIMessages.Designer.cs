@@ -169,6 +169,15 @@ namespace Lithnet.Laps.Web.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are not authorized to update the password expiracy date..
+        /// </summary>
+        public static string NotAuthorizedToUpdateExpiracy {
+            get {
+                return ResourceManager.GetString("NotAuthorizedToUpdateExpiracy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {

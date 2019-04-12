@@ -483,6 +483,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lithnet.Laps.ActiveDirectory\Lithnet.Laps.ActiveDirectory.csproj">
+      <Project>{B16663C0-C8F2-4EF2-98B8-022084B8165C}</Project>
+      <Name>Lithnet.Laps.ActiveDirectory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
       <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>
       <Name>Lithnet.Laps.DirectoryInterfaces</Name>

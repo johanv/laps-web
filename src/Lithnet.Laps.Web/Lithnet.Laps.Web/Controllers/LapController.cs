@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.DirectoryServices.AccountManagement;
 using System.Web.Mvc;
+using Lithnet.Laps.ActiveDirectory;
 using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Audit;
@@ -63,10 +64,10 @@ namespace Lithnet.Laps.Web.Controllers
 
                     if (user == null)
                     {
-                        throw new NoMatchingPrincipalException();
+                        throw new UserNotRecognizedException();
                     }
                 }
-                catch (NoMatchingPrincipalException ex)
+                catch (UserNotRecognizedException ex)
                 {
                     return this.LogAndReturnErrorResponse(model, UIMessages.SsoIdentityNotFound, EventIDs.SsoIdentityNotFound, null, ex);
                 }

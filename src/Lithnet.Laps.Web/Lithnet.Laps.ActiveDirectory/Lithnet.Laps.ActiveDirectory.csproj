@@ -49,6 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchResultExtensions.cs" />
     <Compile Include="UserAdapter.cs" />
+    <Compile Include="UserNotRecognizedException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">

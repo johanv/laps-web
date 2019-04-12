@@ -26,7 +26,7 @@ namespace Lithnet.Laps.Web.Models
             ValidUntil = validUntil;
         }
 
-        public LapEntryModel(IComputer computer, Password password) : this(computer.SamAccountName, password.Value,
+        public LapEntryModel(IComputer computer, Password password) : this(computer.Name, password.Value,
             BuildHtmlPassword(password.Value), password.ExpirationTime, String.Empty)
         {
         }

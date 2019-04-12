@@ -281,6 +281,7 @@
     </Compile>
     <Compile Include="Security\Authentication\AuthenticationService.cs" />
     <Compile Include="Security\Authentication\IAuthenticationService.cs" />
+    <Compile Include="Security\Authorization\Combined\SqlOrConfigurationFileAuthorizationService.cs" />
     <Compile Include="Security\Authorization\ConfigurationFile\AvailableReaders.cs" />
     <Compile Include="Security\Authorization\ConfigurationFile\ConfigurationFileAuthorizationService.cs" />
     <Compile Include="Security\Authorization\ConfigurationFile\IAvailableReaders.cs" />
@@ -490,7 +491,6 @@
       <LastGenOutput>UIMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

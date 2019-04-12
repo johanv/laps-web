@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using System;
+using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.Audit;
 using Lithnet.Laps.Web.Models;
 using Lithnet.Laps.Web.Security.Authentication;
 using Lithnet.Laps.Web.Security.Authorization;
-using Lithnet.Laps.Web.Security.Authorization.ConfigurationFile;
 using Moq;
 using NLog;
 

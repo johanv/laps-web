@@ -2,9 +2,8 @@
 using System.DirectoryServices.AccountManagement;
 using System.Security.Principal;
 using Lithnet.Laps.DirectoryInterfaces;
-using Lithnet.Laps.Web.Models;
 
-namespace Lithnet.Laps.Web.ActiveDirectory
+namespace Lithnet.Laps.ActiveDirectory
 {
     public sealed class UserAdapter: IUser
     {

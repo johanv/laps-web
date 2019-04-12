@@ -70,25 +70,5 @@ namespace Lithnet.Laps.Web
             return builder.ToString();
         }
 
-        public static DateTime? GetPropertyDateTimeFromLong(this SearchResult result, string propertyName)
-        {
-            if (!result.Properties.Contains(propertyName))
-            {
-                return null;
-            }
-
-            long value = (long)result.Properties[propertyName][0];
-            return DateTime.FromFileTimeUtc(value).ToLocalTime();
-        }
-
-        public static string GetPropertyString(this SearchResult result, string propertyName)
-        {
-            if (!result.Properties.Contains(propertyName))
-            {
-                return null;
-            }
-
-            return result.Properties[ActiveDirectory.ActiveDirectory.AttrMsMcsAdmPwd][0]?.ToString();
-        }
     }
 }

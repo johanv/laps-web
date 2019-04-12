@@ -2,7 +2,6 @@
 using System.Linq;
 using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.Models;
-using Lithnet.Laps.Web.Security.Authorization.ConfigurationFile;
 using NLog;
 
 namespace Lithnet.Laps.Web.Security.Authorization

@@ -113,6 +113,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
+      <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>
+      <Name>Lithnet.Laps.DirectoryInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lithnet.Laps.Web\Lithnet.Laps.Web.csproj">
       <Project>{AFF2B8F3-9BF2-4BDB-A841-F13AA9F4CEDC}</Project>
       <Name>Lithnet.Laps.Web</Name>

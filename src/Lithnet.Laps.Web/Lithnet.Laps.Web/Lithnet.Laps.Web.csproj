@@ -256,7 +256,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveDirectory\ActiveDirectory.cs" />
     <Compile Include="App_LocalResources\UIMessages.it.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -286,11 +285,9 @@
     <Compile Include="Security\Authorization\ConfigurationFile\ConfigurationFileAuthorizationService.cs" />
     <Compile Include="Security\Authorization\ConfigurationFile\IAvailableReaders.cs" />
     <Compile Include="Security\Authorization\IAuthorizationService.cs" />
-    <Compile Include="ActiveDirectory\ComputerAdapter.cs" />
     <Compile Include="ConfigSection\AuditElement.cs" />
     <Compile Include="ConfigSection\RateLimitIPElement.cs" />
     <Compile Include="ConfigSection\RateLimitUserElement.cs" />
-    <Compile Include="ActiveDirectory\GroupAdapter.cs" />
     <Compile Include="Internal\IRateLimiter.cs" />
     <Compile Include="Internal\RateLimiter.cs" />
     <Compile Include="Audit\Reporting.cs" />
@@ -329,7 +326,6 @@
     <Compile Include="Security\Authorization\DemoAuthorizationService.cs" />
     <Compile Include="Security\Authorization\IAvailableTargets.cs" />
     <Compile Include="Security\Authorization\AvailableTargets.cs" />
-    <Compile Include="ActiveDirectory\UserAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />

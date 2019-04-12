@@ -4,10 +4,8 @@ using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Security.Principal;
 using Lithnet.Laps.DirectoryInterfaces;
-using Lithnet.Laps.Web.Directory;
-using Lithnet.Laps.Web.Models;
 
-namespace Lithnet.Laps.Web.ActiveDirectory
+namespace Lithnet.Laps.ActiveDirectory
 {
     public sealed class ActiveDirectory: IDirectory
     {
@@ -68,7 +66,7 @@ namespace Lithnet.Laps.Web.ActiveDirectory
             }
 
             return new Password(
-                searchResult.GetPropertyString(Web.ActiveDirectory.ActiveDirectory.AttrMsMcsAdmPwd),
+                searchResult.GetPropertyString(ActiveDirectory.AttrMsMcsAdmPwd),
                 searchResult.GetPropertyDateTimeFromLong(ActiveDirectory.AttrMsMcsAdmPwdExpirationTime)
             );
         }

@@ -1,5 +1,6 @@
 ﻿using System.DirectoryServices.AccountManagement;
 using System.Web;
+using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Models;
 

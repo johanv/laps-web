@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.Audit;
 using Lithnet.Laps.Web.Models;
 using Microsoft.IdentityModel.Claims;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 
 namespace Lithnet.Laps.DirectoryInterfaces
 {

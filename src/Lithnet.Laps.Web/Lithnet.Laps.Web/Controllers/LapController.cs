@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.DirectoryServices.AccountManagement;
 using System.Web.Mvc;
+using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Audit;
 using Lithnet.Laps.Web.Security.Authorization.ConfigurationFile;
@@ -128,7 +129,7 @@ namespace Lithnet.Laps.Web.Controllers
                         // Get the password again with the updated expiracy date.
                         password = directory.GetPassword(computer);
                     }
-                    catch (UnauthorizedAccessException ex)
+                    catch (UnauthorizedAccessException)
                     {
                         return this.LogAndReturnErrorResponse(
                             model,

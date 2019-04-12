@@ -292,15 +292,11 @@
     <Compile Include="ConfigSection\RateLimitUserElement.cs" />
     <Compile Include="ActiveDirectory\GroupAdapter.cs" />
     <Compile Include="Internal\IRateLimiter.cs" />
-    <Compile Include="Models\IComputer.cs" />
-    <Compile Include="Models\IDirectory.cs" />
     <Compile Include="Internal\RateLimiter.cs" />
     <Compile Include="Audit\Reporting.cs" />
     <Compile Include="ConfigSection\ReaderCollection.cs" />
     <Compile Include="ConfigSection\TargetElement.cs" />
     <Compile Include="ConfigSection\ReaderElement.cs" />
-    <Compile Include="Models\IUser.cs" />
-    <Compile Include="Models\Password.cs" />
     <Compile Include="Models\TargetType.cs" />
     <Compile Include="ConfigSection\TargetCollection.cs" />
     <Compile Include="Controllers\LapController.cs" />
@@ -333,7 +329,6 @@
     <Compile Include="Security\Authorization\DemoAuthorizationService.cs" />
     <Compile Include="Security\Authorization\IAvailableTargets.cs" />
     <Compile Include="Security\Authorization\AvailableTargets.cs" />
-    <Compile Include="Models\IGroup.cs" />
     <Compile Include="ActiveDirectory\UserAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -490,6 +485,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UIMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
+      <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>
+      <Name>Lithnet.Laps.DirectoryInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

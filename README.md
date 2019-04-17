@@ -1,8 +1,15 @@
 ![](https://github.com/lithnet/laps-web/wiki/images/logo-ex-small.png)
 # Lithnet LAPS Web App
+
 The Lithnet LAPS Web App is an IIS application that allows you to manage access to local admin passwords that are managed by the [Microsoft Local Admin Password Solution (LAPS)](https://technet.microsoft.com/en-us/mt227395.aspx)
 
 It provides granular permissions, auditing, email alerting and rate-limited access to LAPS passwords stored in a directory and is compatible with OpenID Connect, WS-Federation (ADFS), and integrated windows authentication.
+
+## Warning: This is a fork!
+
+I forked this from [the original](https://github.com/lithnet/laps-web). I introduced interfaces and dependency injection, which allows you to use different ways of authorization. You can choose a way of authorizing in the Web.config-file of the web application; search that file for `<container> ` to see what it is about.
+
+I also tried to move all active-directory-related stuff to a dedicated assembly, but that was more difficult than I thought it would be. The `Startup`-class still depends heavily on Active Directory and alike. Maybe I'll still fix this at some point in the future. Maybe I won't. :-)
 
 ## Features
 ### Web-based accesss to LAPS passwords

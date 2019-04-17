@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using System.DirectoryServices.AccountManagement;
 using System.Web.Mvc;
+using Lithnet.Laps.ActiveDirectory;
+using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Audit;
-using Lithnet.Laps.Web.Security.Authorization.ConfigurationFile;
 using Lithnet.Laps.Web.Models;
 using Lithnet.Laps.Web.Security.Authentication;
 using Lithnet.Laps.Web.Security.Authorization;
@@ -63,10 +63,10 @@ namespace Lithnet.Laps.Web.Controllers
 
                     if (user == null)
                     {
-                        throw new NoMatchingPrincipalException();
+                        throw new UserNotRecognizedException();
                     }
                 }
-                catch (NoMatchingPrincipalException ex)
+                catch (UserNotRecognizedException ex)
                 {
                     return this.LogAndReturnErrorResponse(model, UIMessages.SsoIdentityNotFound, EventIDs.SsoIdentityNotFound, null, ex);
                 }
@@ -128,7 +128,7 @@ namespace Lithnet.Laps.Web.Controllers
                         // Get the password again with the updated expiracy date.
                         password = directory.GetPassword(computer);
                     }
-                    catch (UnauthorizedAccessException ex)
+                    catch (UnauthorizedAccessException)
                     {
                         return this.LogAndReturnErrorResponse(
                             model,

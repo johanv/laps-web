@@ -1,4 +1,4 @@
-﻿using Lithnet.Laps.Web.Models;
+﻿using Lithnet.Laps.DirectoryInterfaces;
 
 namespace Lithnet.Laps.Web.Security.Authentication
 {

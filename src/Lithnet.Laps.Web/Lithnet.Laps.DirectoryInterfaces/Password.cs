@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lithnet.Laps.Web.Models
+namespace Lithnet.Laps.DirectoryInterfaces
 {
     public class Password
     {

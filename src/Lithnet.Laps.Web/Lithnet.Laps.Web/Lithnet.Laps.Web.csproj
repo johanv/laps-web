@@ -256,7 +256,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveDirectory\ActiveDirectory.cs" />
     <Compile Include="App_LocalResources\UIMessages.it.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -286,21 +285,15 @@
     <Compile Include="Security\Authorization\ConfigurationFile\ConfigurationFileAuthorizationService.cs" />
     <Compile Include="Security\Authorization\ConfigurationFile\IAvailableReaders.cs" />
     <Compile Include="Security\Authorization\IAuthorizationService.cs" />
-    <Compile Include="ActiveDirectory\ComputerAdapter.cs" />
     <Compile Include="ConfigSection\AuditElement.cs" />
     <Compile Include="ConfigSection\RateLimitIPElement.cs" />
     <Compile Include="ConfigSection\RateLimitUserElement.cs" />
-    <Compile Include="ActiveDirectory\GroupAdapter.cs" />
     <Compile Include="Internal\IRateLimiter.cs" />
-    <Compile Include="Models\IComputer.cs" />
-    <Compile Include="Models\IDirectory.cs" />
     <Compile Include="Internal\RateLimiter.cs" />
     <Compile Include="Audit\Reporting.cs" />
     <Compile Include="ConfigSection\ReaderCollection.cs" />
     <Compile Include="ConfigSection\TargetElement.cs" />
     <Compile Include="ConfigSection\ReaderElement.cs" />
-    <Compile Include="Models\IUser.cs" />
-    <Compile Include="Models\Password.cs" />
     <Compile Include="Models\TargetType.cs" />
     <Compile Include="ConfigSection\TargetCollection.cs" />
     <Compile Include="Controllers\LapController.cs" />
@@ -333,8 +326,6 @@
     <Compile Include="Security\Authorization\DemoAuthorizationService.cs" />
     <Compile Include="Security\Authorization\IAvailableTargets.cs" />
     <Compile Include="Security\Authorization\AvailableTargets.cs" />
-    <Compile Include="Models\IGroup.cs" />
-    <Compile Include="ActiveDirectory\UserAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -490,6 +481,16 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UIMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lithnet.Laps.ActiveDirectory\Lithnet.Laps.ActiveDirectory.csproj">
+      <Project>{B16663C0-C8F2-4EF2-98B8-022084B8165C}</Project>
+      <Name>Lithnet.Laps.ActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
+      <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>
+      <Name>Lithnet.Laps.DirectoryInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

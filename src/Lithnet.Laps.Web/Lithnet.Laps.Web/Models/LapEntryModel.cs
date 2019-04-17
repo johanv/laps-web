@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using Lithnet.Laps.DirectoryInterfaces;
 
 namespace Lithnet.Laps.Web.Models
 {

@@ -1,6 +1,6 @@
-﻿using Lithnet.Laps.Web.Audit;
+﻿using Lithnet.Laps.DirectoryInterfaces;
+using Lithnet.Laps.Web.Audit;
 using Lithnet.Laps.Web.Models;
-using Lithnet.Laps.Web.Security.Authorization.ConfigurationFile;
 
 namespace Lithnet.Laps.Web.Security.Authorization
 {

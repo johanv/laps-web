@@ -45,6 +45,7 @@ namespace Lithnet.Laps.Web
         }
 
 
+        // TODO: Get rid of this; I think this functionality belongs in the ActiveDirectory Assembly.
         public static UserPrincipal FindUserPrincipalByClaim(this ClaimsIdentity p, IdentityType identityType, params string[] claimNames)
         {
             foreach (string claimName in claimNames)
@@ -70,25 +71,5 @@ namespace Lithnet.Laps.Web
             return builder.ToString();
         }
 
-        public static DateTime? GetPropertyDateTimeFromLong(this SearchResult result, string propertyName)
-        {
-            if (!result.Properties.Contains(propertyName))
-            {
-                return null;
-            }
-
-            long value = (long)result.Properties[propertyName][0];
-            return DateTime.FromFileTimeUtc(value).ToLocalTime();
-        }
-
-        public static string GetPropertyString(this SearchResult result, string propertyName)
-        {
-            if (!result.Properties.Contains(propertyName))
-            {
-                return null;
-            }
-
-            return result.Properties[ActiveDirectory.ActiveDirectory.AttrMsMcsAdmPwd][0]?.ToString();
-        }
     }
 }

@@ -1,7 +1,7 @@
-﻿using System.DirectoryServices.AccountManagement;
-using System.Web;
+﻿using System.Web;
+using Lithnet.Laps.ActiveDirectory;
+using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
-using Lithnet.Laps.Web.Models;
 
 namespace Lithnet.Laps.Web.Security.Authentication
 {
@@ -28,7 +28,7 @@ namespace Lithnet.Laps.Web.Security.Authentication
 
             if (directoryUser == null)
             {
-                throw new NoMatchingPrincipalException(string.Format(LogMessages.UserNotFoundInDirectory, httpContext.User.Identity.Name));
+                throw new UserNotRecognizedException(string.Format(LogMessages.UserNotFoundInDirectory, httpContext.User.Identity.Name));
             }
 
             return directoryUser;

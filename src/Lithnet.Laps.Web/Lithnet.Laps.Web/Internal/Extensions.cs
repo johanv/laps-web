@@ -45,6 +45,7 @@ namespace Lithnet.Laps.Web
         }
 
 
+        // TODO: Get rid of this; I think this functionality belongs in the ActiveDirectory Assembly.
         public static UserPrincipal FindUserPrincipalByClaim(this ClaimsIdentity p, IdentityType identityType, params string[] claimNames)
         {
             foreach (string claimName in claimNames)

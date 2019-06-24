@@ -1,4 +1,5 @@
-﻿using Lithnet.Laps.DirectoryInterfaces;
+﻿using System;
+using Lithnet.Laps.DirectoryInterfaces;
 
 namespace KuLeuven.GBiomed.Laps.Services
 {
@@ -14,6 +15,11 @@ namespace KuLeuven.GBiomed.Laps.Services
         public Password GetPassword(IComputer computer)
         {
             return this.directory.GetPassword(computer);
+        }
+
+        public void SetPasswordExpiryTime(IComputer computer, DateTime newDateTime)
+        {
+            this.directory.SetPasswordExpiryTime(computer, newDateTime);
         }
     }
 }

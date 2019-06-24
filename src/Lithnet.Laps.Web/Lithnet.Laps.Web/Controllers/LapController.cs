@@ -19,7 +19,6 @@ namespace Lithnet.Laps.Web.Controllers
     {
         private readonly IAuthorizationService authorizationService;
         private readonly ILogger logger;
-        private readonly IDirectory directory;
         private readonly IReporting reporting;
         private readonly IRateLimiter rateLimiter;
         private readonly IAvailableTargets availableTargets;
@@ -27,13 +26,12 @@ namespace Lithnet.Laps.Web.Controllers
         private readonly IComputerService computerService;
         private readonly IPasswordService passwordService;
 
-        public LapController(IAuthorizationService authorizationService, ILogger logger, IDirectory directory,
-            IReporting reporting, IRateLimiter rateLimiter, IAvailableTargets availableTargets,
-            IAuthenticationService authenticationService, IComputerService computerService, IPasswordService passwordService)
+        public LapController(IAuthorizationService authorizationService, ILogger logger, IReporting reporting,
+            IRateLimiter rateLimiter, IAvailableTargets availableTargets, IAuthenticationService authenticationService,
+            IComputerService computerService, IPasswordService passwordService)
         {
             this.authorizationService = authorizationService;
             this.logger = logger;
-            this.directory = directory;
             this.reporting = reporting;
             this.rateLimiter = rateLimiter;
             this.availableTargets = availableTargets;
@@ -131,7 +129,7 @@ namespace Lithnet.Laps.Web.Controllers
                     {
                         UpdateTargetPasswordExpiry(target, computer);
                         // Get the password again with the updated expiracy date.
-                        password = directory.GetPassword(computer);
+                        password = passwordService.GetPassword(computer);
                     }
                     catch (UnauthorizedAccessException)
                     {
@@ -209,7 +207,7 @@ namespace Lithnet.Laps.Web.Controllers
             TimeSpan t = TimeSpan.Parse(target.ExpireAfter);
             logger.Trace($"Target rule requires password to change after {t}");
             DateTime newDateTime = DateTime.UtcNow.Add(t);
-            directory.SetPasswordExpiryTime(computer, newDateTime);
+            passwordService.SetPasswordExpiryTime(computer, newDateTime);
             logger.Trace($"Set expiry time for {computer.SamAccountName} to {newDateTime.ToLocalTime()}");
         }
     }

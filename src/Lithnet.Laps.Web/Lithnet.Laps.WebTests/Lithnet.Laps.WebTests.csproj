@@ -113,6 +113,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KuLeuven.GBiomed.Laps.Services\KuLeuven.GBiomed.Laps.Services.csproj">
+      <Project>{34bda1c0-e716-45ba-a9d7-aa717048e7fa}</Project>
+      <Name>KuLeuven.GBiomed.Laps.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
       <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>
       <Name>Lithnet.Laps.DirectoryInterfaces</Name>

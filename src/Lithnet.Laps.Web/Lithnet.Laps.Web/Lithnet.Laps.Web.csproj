@@ -483,6 +483,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KuLeuven.GBiomed.Laps.Services\KuLeuven.GBiomed.Laps.Services.csproj">
+      <Project>{34bda1c0-e716-45ba-a9d7-aa717048e7fa}</Project>
+      <Name>KuLeuven.GBiomed.Laps.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lithnet.Laps.ActiveDirectory\Lithnet.Laps.ActiveDirectory.csproj">
       <Project>{B16663C0-C8F2-4EF2-98B8-022084B8165C}</Project>
       <Name>Lithnet.Laps.ActiveDirectory</Name>

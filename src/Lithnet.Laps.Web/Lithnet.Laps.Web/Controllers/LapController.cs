@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Web.Mvc;
+using KuLeuven.GBiomed.Laps.Services;
 using Lithnet.Laps.ActiveDirectory;
 using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
@@ -23,10 +24,12 @@ namespace Lithnet.Laps.Web.Controllers
         private readonly IRateLimiter rateLimiter;
         private readonly IAvailableTargets availableTargets;
         private readonly IAuthenticationService authenticationService;
+        private readonly IComputerService computerService;
+        private readonly IPasswordService passwordService;
 
         public LapController(IAuthorizationService authorizationService, ILogger logger, IDirectory directory,
             IReporting reporting, IRateLimiter rateLimiter, IAvailableTargets availableTargets,
-            IAuthenticationService authenticationService)
+            IAuthenticationService authenticationService, IComputerService computerService, IPasswordService passwordService)
         {
             this.authorizationService = authorizationService;
             this.logger = logger;
@@ -35,6 +38,8 @@ namespace Lithnet.Laps.Web.Controllers
             this.rateLimiter = rateLimiter;
             this.availableTargets = availableTargets;
             this.authenticationService = authenticationService;
+            this.computerService = computerService;
+            this.passwordService = passwordService;
         }
 
         public ActionResult Get()
@@ -78,7 +83,7 @@ namespace Lithnet.Laps.Web.Controllers
 
                 reporting.LogSuccessEvent(EventIDs.UserRequestedPassword, string.Format(LogMessages.UserHasRequestedPassword, user.SamAccountName, model.ComputerName));
 
-                var computer = directory.GetComputer(model.ComputerName);
+                var computer = computerService.GetComputer(model.ComputerName);
 
                 if (computer == null)
                 {
@@ -113,7 +118,7 @@ namespace Lithnet.Laps.Web.Controllers
 
                 // Do actual work only if authorized.
 
-                var password = directory.GetPassword(computer);
+                var password = passwordService.GetPassword(computer);
 
                 if (password == null)
                 {

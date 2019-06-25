@@ -1,13 +1,11 @@
 ﻿using NUnit.Framework;
 using System;
-using Lithnet.Laps.DirectoryInterfaces;
 using Moq;
 using NLog;
 using KuLeuven.GBiomed.Laps.Audit;
-using Lithnet.Laps.ConfigSection;
-using KuLeuven.GBiomed.Laps.Security.Authorization.ConfigurationFile;
+using Lithnet.Laps.DirectoryInterfaces;
 
-namespace Lithnet.Laps.Web.Security.Authorization.ConfigurationFile.Tests
+namespace KuLeuven.GBiomed.Laps.Security.Authorization.ConfigurationFile.Tests
 {
     [TestFixture()]
     public class ConfigurationFileAuthorizationServiceTests

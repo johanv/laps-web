@@ -1,8 +1,7 @@
-﻿using KuLeuven.GBiomed.Laps.Security.Authorization;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 
-namespace Lithnet.Laps.Web.Security.Authorization.ConfigurationFile.Tests
+namespace KuLeuven.GBiomed.Laps.Security.Authorization.Tests
 {
     [TestFixture()]
     public class AuthorizationResponseTests

@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using System.Linq;
 
-namespace Lithnet.Laps.Web.Audit.Tests
+namespace Kuleuven.GBiomed.Laps.Audit.Tests
 {
     [TestFixture()]
     public class UsersToNotifyTests

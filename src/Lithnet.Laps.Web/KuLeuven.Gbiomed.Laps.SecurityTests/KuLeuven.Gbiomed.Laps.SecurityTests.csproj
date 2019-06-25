@@ -93,6 +93,10 @@
       <Project>{CC650006-F38E-4689-AAEE-83A1E4D71638}</Project>
       <Name>KuLeuven.Gbiomed.Laps.Security</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lithnet.Laps.ConfigSection\Lithnet.Laps.ConfigSection.csproj">
+      <Project>{4F5E8153-9203-435D-9646-C309DA19A978}</Project>
+      <Name>Lithnet.Laps.ConfigSection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
       <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>
       <Name>Lithnet.Laps.DirectoryInterfaces</Name>

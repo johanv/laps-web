@@ -4,6 +4,7 @@ using Moq;
 using NLog;
 using KuLeuven.GBiomed.Laps.Audit;
 using Lithnet.Laps.DirectoryInterfaces;
+using Lithnet.Laps.ConfigSection;
 
 namespace KuLeuven.GBiomed.Laps.Security.Authorization.ConfigurationFile.Tests
 {

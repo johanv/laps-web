@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Web.Mvc;
+using KuLeuven.GBiomed.Laps.Services;
 using Lithnet.Laps.ActiveDirectory;
 using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
@@ -18,23 +19,25 @@ namespace Lithnet.Laps.Web.Controllers
     {
         private readonly IAuthorizationService authorizationService;
         private readonly ILogger logger;
-        private readonly IDirectory directory;
         private readonly IReporting reporting;
         private readonly IRateLimiter rateLimiter;
         private readonly IAvailableTargets availableTargets;
         private readonly IAuthenticationService authenticationService;
+        private readonly IComputerService computerService;
+        private readonly IPasswordService passwordService;
 
-        public LapController(IAuthorizationService authorizationService, ILogger logger, IDirectory directory,
-            IReporting reporting, IRateLimiter rateLimiter, IAvailableTargets availableTargets,
-            IAuthenticationService authenticationService)
+        public LapController(IAuthorizationService authorizationService, ILogger logger, IReporting reporting,
+            IRateLimiter rateLimiter, IAvailableTargets availableTargets, IAuthenticationService authenticationService,
+            IComputerService computerService, IPasswordService passwordService)
         {
             this.authorizationService = authorizationService;
             this.logger = logger;
-            this.directory = directory;
             this.reporting = reporting;
             this.rateLimiter = rateLimiter;
             this.availableTargets = availableTargets;
             this.authenticationService = authenticationService;
+            this.computerService = computerService;
+            this.passwordService = passwordService;
         }
 
         public ActionResult Get()
@@ -78,7 +81,7 @@ namespace Lithnet.Laps.Web.Controllers
 
                 reporting.LogSuccessEvent(EventIDs.UserRequestedPassword, string.Format(LogMessages.UserHasRequestedPassword, user.SamAccountName, model.ComputerName));
 
-                var computer = directory.GetComputer(model.ComputerName);
+                var computer = computerService.GetComputer(model.ComputerName);
 
                 if (computer == null)
                 {
@@ -113,7 +116,7 @@ namespace Lithnet.Laps.Web.Controllers
 
                 // Do actual work only if authorized.
 
-                var password = directory.GetPassword(computer);
+                var password = passwordService.GetPassword(computer);
 
                 if (password == null)
                 {
@@ -126,7 +129,7 @@ namespace Lithnet.Laps.Web.Controllers
                     {
                         UpdateTargetPasswordExpiry(target, computer);
                         // Get the password again with the updated expiracy date.
-                        password = directory.GetPassword(computer);
+                        password = passwordService.GetPassword(computer);
                     }
                     catch (UnauthorizedAccessException)
                     {
@@ -204,7 +207,7 @@ namespace Lithnet.Laps.Web.Controllers
             TimeSpan t = TimeSpan.Parse(target.ExpireAfter);
             logger.Trace($"Target rule requires password to change after {t}");
             DateTime newDateTime = DateTime.UtcNow.Add(t);
-            directory.SetPasswordExpiryTime(computer, newDateTime);
+            passwordService.SetPasswordExpiryTime(computer, newDateTime);
             logger.Trace($"Set expiry time for {computer.SamAccountName} to {newDateTime.ToLocalTime()}");
         }
     }

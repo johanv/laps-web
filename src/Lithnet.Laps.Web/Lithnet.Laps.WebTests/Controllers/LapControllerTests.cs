@@ -7,6 +7,7 @@ using Lithnet.Laps.Web.Security.Authentication;
 using Lithnet.Laps.Web.Security.Authorization;
 using Moq;
 using NLog;
+using KuLeuven.GBiomed.Laps.Services;
 
 namespace Lithnet.Laps.Web.Controllers.Tests
 {
@@ -44,13 +45,14 @@ namespace Lithnet.Laps.Web.Controllers.Tests
         [Test()]
         public void GetPassesTargetToReportingWhenAuthorizationFails()
         {
-            var directoryStub = new Mock<IDirectory>();
+            var computerServiceStub = new Mock<IComputerService>();
             var authorizationServiceStub = new Mock<IAuthorizationService>();
             var availableTargetsStub = new Mock<IAvailableTargets>();
+            var dummyPasswordService = new Mock<IPasswordService>();
 
             var reportingMock = new Mock<IReporting>();
 
-            directoryStub.Setup(d => d.GetComputer(It.IsAny<string>()))
+            computerServiceStub.Setup(d => d.GetComputer(It.IsAny<string>()))
                 .Returns(dummyComputer.Object);
 
             authorizationServiceStub
@@ -65,11 +67,12 @@ namespace Lithnet.Laps.Web.Controllers.Tests
             var controller = new LapController(
                 authorizationServiceStub.Object,
                 dummyLogger.Object,
-                directoryStub.Object,
                 reportingMock.Object,
                 dummyRateLimiter.Object,
                 availableTargetsStub.Object,
-                authenticationServiceStub.Object
+                authenticationServiceStub.Object,
+                computerServiceStub.Object,
+                dummyPasswordService.Object
             );
 
             controller.Get(new LapRequestModel { ComputerName = @"Computer" });
@@ -90,21 +93,23 @@ namespace Lithnet.Laps.Web.Controllers.Tests
         [Test()]
         public void GetLogsErrorWhenComputerNotFound()
         {
-            var directoryStub = new Mock<IDirectory>();
+            var computerServiceMock = new Mock<IComputerService>();
             var reportingMock = new Mock<IReporting>();
+            var dummyPasswordService = new Mock<IPasswordService>();
 
             // Computer not found.
-            directoryStub.Setup(d => d.GetComputer(It.IsAny<string>()))
+            computerServiceMock.Setup(d => d.GetComputer(It.IsAny<string>()))
                 .Returns((IComputer)null);
 
             var controller = new LapController(
                 dummyAuthorizationService.Object,
                 dummyLogger.Object,
-                directoryStub.Object,
                 reportingMock.Object,
                 dummyRateLimiter.Object,
                 dummyAvailableTargets.Object,
-                authenticationServiceStub.Object
+                authenticationServiceStub.Object,
+                computerServiceMock.Object,
+                dummyPasswordService.Object
             );
 
             controller.Get(new LapRequestModel { ComputerName = @"Computer" });

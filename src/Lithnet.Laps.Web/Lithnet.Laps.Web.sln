@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithnet.Laps.Web", "Lithnet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithnet.Laps.WebTests", "Lithnet.Laps.WebTests\Lithnet.Laps.WebTests.csproj", "{CF9A8FD1-D9D9-4DB7-9ED6-31300AD7DFF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithnet.Laps.DirectoryInterfaces", "Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj", "{5F080848-382A-4992-BE75-1869804780FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lithnet.Laps.DirectoryInterfaces", "Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj", "{5F080848-382A-4992-BE75-1869804780FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithnet.Laps.ActiveDirectory", "Lithnet.Laps.ActiveDirectory\Lithnet.Laps.ActiveDirectory.csproj", "{B16663C0-C8F2-4EF2-98B8-022084B8165C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuLeuven.GBiomed.Laps.Services", "KuLeuven.GBiomed.Laps.Services\KuLeuven.GBiomed.Laps.Services.csproj", "{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,12 @@ Global
 		{B16663C0-C8F2-4EF2-98B8-022084B8165C}.Dev|Any CPU.Build.0 = Debug|Any CPU
 		{B16663C0-C8F2-4EF2-98B8-022084B8165C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B16663C0-C8F2-4EF2-98B8-022084B8165C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}.Dev|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}.Dev|Any CPU.Build.0 = Debug|Any CPU
+		{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34BDA1C0-E716-45BA-A9D7-AA717048E7FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

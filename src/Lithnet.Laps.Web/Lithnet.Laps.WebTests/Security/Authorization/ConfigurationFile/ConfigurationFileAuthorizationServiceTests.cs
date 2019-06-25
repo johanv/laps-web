@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework;
 using System;
 using Lithnet.Laps.DirectoryInterfaces;
-using Lithnet.Laps.Web.Models;
 using Moq;
 using NLog;
+using KuLeuven.GBiomed.Laps.Audit;
+using Lithnet.Laps.ConfigSection;
+using KuLeuven.GBiomed.Laps.Security.Authorization.ConfigurationFile;
 
 namespace Lithnet.Laps.Web.Security.Authorization.ConfigurationFile.Tests
 {

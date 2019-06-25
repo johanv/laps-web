@@ -113,9 +113,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KuLeuven.GBiomed.Laps.Audit\KuLeuven.GBiomed.Laps.Audit.csproj">
+      <Project>{3EE5E88A-399D-403B-8A11-BD48880187A1}</Project>
+      <Name>KuLeuven.GBiomed.Laps.Audit</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KuLeuven.GBiomed.Laps.Services\KuLeuven.GBiomed.Laps.Services.csproj">
       <Project>{34bda1c0-e716-45ba-a9d7-aa717048e7fa}</Project>
       <Name>KuLeuven.GBiomed.Laps.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KuLeuven.Gbiomed.Laps.Security\KuLeuven.Gbiomed.Laps.Security.csproj">
+      <Project>{cc650006-f38e-4689-aaee-83a1e4d71638}</Project>
+      <Name>KuLeuven.Gbiomed.Laps.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lithnet.Laps.ConfigSection\Lithnet.Laps.ConfigSection.csproj">
+      <Project>{4F5E8153-9203-435D-9646-C309DA19A978}</Project>
+      <Name>Lithnet.Laps.ConfigSection</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lithnet.Laps.DirectoryInterfaces\Lithnet.Laps.DirectoryInterfaces.csproj">
       <Project>{5F080848-382A-4992-BE75-1869804780FE}</Project>

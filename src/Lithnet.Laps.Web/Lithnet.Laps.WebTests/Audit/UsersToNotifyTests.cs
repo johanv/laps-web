@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using KuLeuven.GBiomed.Laps.Audit;
+using NUnit.Framework;
 using System.Linq;
 
 namespace Lithnet.Laps.Web.Audit.Tests

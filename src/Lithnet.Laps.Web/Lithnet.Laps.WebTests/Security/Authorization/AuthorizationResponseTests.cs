@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using KuLeuven.GBiomed.Laps.Security.Authorization;
+using NUnit.Framework;
 using System;
 
 namespace Lithnet.Laps.Web.Security.Authorization.ConfigurationFile.Tests

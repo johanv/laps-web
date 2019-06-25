@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web;
 using System.Web.Caching;
+using KuLeuven.GBiomed.Laps.Audit;
+using Lithnet.Laps.ConfigSection;
 using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Audit;

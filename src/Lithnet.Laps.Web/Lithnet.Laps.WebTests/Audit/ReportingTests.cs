@@ -5,9 +5,11 @@ using Lithnet.Laps.DirectoryInterfaces;
 using NUnit.Framework;
 using Lithnet.Laps.Web.Mail;
 using Lithnet.Laps.Web.Models;
-using Lithnet.Laps.Web.Security.Authorization;
 using Moq;
 using NLog;
+using KuLeuven.GBiomed.Laps.Audit;
+using Lithnet.Laps.ConfigSection;
+using KuLeuven.GBiomed.Laps.Security.Authorization;
 
 namespace Lithnet.Laps.Web.Audit.Tests
 {

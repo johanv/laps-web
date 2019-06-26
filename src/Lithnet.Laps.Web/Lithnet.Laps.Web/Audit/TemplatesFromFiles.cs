@@ -1,4 +1,5 @@
 ﻿using System;
+using KuLeuven.GBiomed.Laps.Audit;
 using NLog;
 
 namespace Lithnet.Laps.Web.Audit

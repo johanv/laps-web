@@ -1,14 +1,15 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Web.Mvc;
+using KuLeuven.GBiomed.Laps.Audit;
 using KuLeuven.GBiomed.Laps.Services;
+using KuLeuven.GBiomed.Laps.Security.Authentication;
+using KuLeuven.GBiomed.Laps.Security.Authorization;
 using Lithnet.Laps.ActiveDirectory;
 using Lithnet.Laps.DirectoryInterfaces;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Audit;
 using Lithnet.Laps.Web.Models;
-using Lithnet.Laps.Web.Security.Authentication;
-using Lithnet.Laps.Web.Security.Authorization;
 using NLog;
 
 namespace Lithnet.Laps.Web.Controllers

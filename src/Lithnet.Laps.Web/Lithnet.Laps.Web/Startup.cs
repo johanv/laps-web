@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
 using IdentityModel.Client;
+using KuLeuven.GBiomed.Laps.Audit;
+using Lithnet.Laps.ConfigSection;
 using Lithnet.Laps.Web.App_LocalResources;
 using Lithnet.Laps.Web.Audit;
 using Lithnet.Laps.Web.Models;
@@ -25,6 +27,12 @@ using Unity;
 
 namespace Lithnet.Laps.Web
 {
+    /// <summary>
+    /// Strange startup magic.
+    /// 
+    /// FIXME: It would be nice if we could move parts of this class to an assembly that's more appropriate.
+    /// But using dependency injection for this class doesn't seem to be that easy.
+    /// </summary>
     public class Startup
     {
         /// <summary>
